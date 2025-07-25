@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A two time never misses</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 5s linear infinite, grow-shrink 3s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    @keyframes grow-shrink {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 onclick="playRandomAudio()">Click the Rainbow Text to Play 🎧</h1>
+
+  <audio id="audioPlayer"></audio>
+
+  <script>
+    const audioFiles = [
+      "1.mp3",
+    ];
+
+    function playRandomAudio() {
+      const audio = document.getElementById("audioPlayer");
+      const randomFile = audioFiles[Math.floor(Math.random() * audioFiles.length)];
+      const randomSpeed = (Math.random() * 1.5 + 0.5).toFixed(2); // range: 0.5x to 2x
+
+      audio.src = randomFile;
+      audio.playbackRate = parseFloat(randomSpeed);
+      audio.play();
+    }
+  </script>
+</body>
+</html>
