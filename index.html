@@ -60,7 +60,7 @@
       const audio = document.getElementById("audioPlayer");
 
       const randomFile = audioFiles[Math.floor(Math.random() * audioFiles.length)];
-      const randomSpeed =  (Math.random() * 4 + 0.3).toFixed(4.3);
+      const randomSpeed =  (Math.random() * 2 + 0.2).toFixed(4.3);
       audio.src = randomFile;
       audio.playbackRate = parseFloat(randomSpeed);
       audio.play();
