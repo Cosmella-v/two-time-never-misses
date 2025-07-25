@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A two time never misses</title>
+  <title>A 2 Time Never Misses</title>
+
+  <meta property="og:title" content="A 2 Time Never Misses" />
+  <meta property="og:description" content="A 2 Time Never Misses" />
+  <meta property="og:url" content="https://cosmella-v.github.io/two-time-never-misses/" />
+  <meta name="theme-color" content="#5865F2" />
+
   <style>
     body {
       background: #111;
@@ -36,14 +42,15 @@
     audio {
       display: none;
     }
+
   </style>
 </head>
 <body>
 
-  <h1 onclick="playRandomAudio()">A two time never misses</h1>
+  <h1 onclick="playRandomAudio()">A 2 Time Never Misses</h1>
+
 
   <audio id="audioPlayer"></audio>
-
   <script>
     const audioFiles = [
       "1.mp3",
@@ -51,8 +58,9 @@
 
     function playRandomAudio() {
       const audio = document.getElementById("audioPlayer");
+
       const randomFile = audioFiles[Math.floor(Math.random() * audioFiles.length)];
-      const randomSpeed = (Math.random() * 1.5 + 0.5).toFixed(2); // range: 0.5x to 2x
+      const randomSpeed = (Math.random() * 9.99 + 0.01).toFixed(2); // range 0.01x to 10x
 
       audio.src = randomFile;
       audio.playbackRate = parseFloat(randomSpeed);
